@@ -24,8 +24,8 @@ import {
 
 export default function Component() {
   return (
-    <div className="flex flex-col h-screen p-24 gap-12">
-      <div className="flex flex-row justify-between bg-red-200 w-full">
+    <div className="flex flex-col h-screen p-6 md:p-12 lg:p-24 gap-12">
+      <div className="flex flex-col gap-2  md:flex-row justify-between w-full">
         <div className="space-y-2">
           <h1 className="font-medium text-4xl">Business Account Information</h1>
           <p>View general information about your business</p>
@@ -48,10 +48,10 @@ export default function Component() {
         </div>
       </div>
 
-      <div className=" border p-16 space-y-12">
-        <div className="flex items-start justify-between">
+      <div className=" border p-8 md:p-16 space-y-12 ">
+        <div className="flex flex-col gap-2 md:flex-row items-start justify-between">
           <h3>General Information</h3>
-          <div className="flex gap-6">
+          <div className="flex flex-col gap-4 md:flex-row md:gap-6">
             <div>
               <AlertDialog>
                 <AlertDialogTrigger asChild>
@@ -95,7 +95,7 @@ export default function Component() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 ">
           <div className="grid w-full max-w-sm items-center gap-1.5">
             <Label htmlFor="firstname">First name:</Label>
             <Input type="firstname" id="firstname" />
@@ -112,10 +112,10 @@ export default function Component() {
             <Label htmlFor="role">Role</Label>
             <Input type="role" id="email" />
           </div>
-          <div className="flex">
-          <Button variant={"outline"}>Cancel</Button>
+          <div className="flex w-full max-w-sm justify-between">
+            <Button variant={"outline"}>Cancel</Button>
 
-          <Button variant={"default"}>Save</Button>
+            <Button variant={"default"}>Save</Button>
           </div>
         </div>
       </div>

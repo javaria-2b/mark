@@ -13,6 +13,7 @@ export default function Home() {
       <div className="flex flex-col gap-8 p-24">
         <Link href="/billing">Billing</Link>
         <Link href="/account">Account</Link>
+        <Link href="/subscriptions">Subscription</Link>
       </div>
       <div className="flex flex-col gap-4">
         <Modal></Modal>

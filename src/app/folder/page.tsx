@@ -12,13 +12,21 @@ import {
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableFooter,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 export default function Subscription() {
   return (
@@ -37,7 +45,7 @@ export default function Subscription() {
         </div>
       </div>
 
-      <div className=" border p-8 md:p-16 space-y-16 ">
+      <div className=" border p-6 md:p-16 space-y-6 md:space-y-16 ">
         <div className="flex w-full justify-between items-center ">
           <FaArrowLeft />
           images
@@ -45,7 +53,7 @@ export default function Subscription() {
         </div>
 
         <div className="flex justify-between">
-          <div className=" flex w-full max-w-sm justify-between">
+          <div className="flex flex-col gap-4 md:flex-row md:w-full md:max-w-sm md:justify-between">
             <Button className="rounded-none">Write a review</Button>
             <Button className="rounded-none" variant={"outline"}>
               Share
@@ -54,14 +62,14 @@ export default function Subscription() {
               Favourite
             </Button>
           </div>
-          <div>
+          <div className="hidden md:block">
             <Button variant={"link"}>View all photos</Button>
           </div>
         </div>
       </div>
 
       <div className="border p-8 md:p-16 space-y-16">
-        <div className=" flex justify-between">
+        <div className=" flex flex-col gap-6 md:flex-row md:justify-between">
           <div className=" flex flex-col gap-3">
             <div className="flex gap-12 items-center w-full max-w-sm justify-between text-lg">
               Store Name #Verified X
@@ -103,10 +111,10 @@ export default function Subscription() {
           </div>
         </div>
 
-        <div className="border p-8 space-y-6 bg-blue-300">
-          <div className="flex items-center justify-between">
+        <div className="border p-6 md:p-8 space-y-6 ">
+          <div className="flex flex-col justify-start gap-4 md:flex-row md:items-center md:justify-between">
             Quick Shop Featured items
-            <div className="flex gap-2">
+            <div className="flex gap-4">
               <FaArrowLeft />
               <FaArrowRight />
             </div>
@@ -114,9 +122,9 @@ export default function Subscription() {
           <Featured></Featured>
         </div>
 
-        <div className=" bg-rose-300 flex justify-between">
-          <div className="flex flex-col gap-4">
-            <div className=" flex justify-between w-full max-w-sm items-center text-lg font-semibold">
+        <div className="  flex flex-col md:flex-row md:justify-between">
+          <div className="flex flex-col gap-4 w-full max-w-sm">
+            <div className=" flex justify-between items-center text-lg font-semibold">
               Posts
               <Button className="rounded-none" variant={"outline"}>
                 Edit
@@ -138,36 +146,77 @@ export default function Subscription() {
                 </div>
               </ResizablePanel>
             </ResizablePanelGroup>
-          </div>
-
-          <div className="bg-yellow-200 flex flex-col gap-4">
-           
-              <div className="flex justify-between w-full max-w-sm items-center  text-lg font-semibold">
-                Address
+            <div className="flex flex-col gap-4">
+              <div className=" flex justify-between items-center text-lg font-semibold">
+                Categories
                 <Button className="rounded-none" variant={"outline"}>
                   Edit
                 </Button>
               </div>
+
+              <div className="flex items-center justify-between">
+                <p>Primary: Resturanat</p>
+                <Select>
+                  <SelectTrigger className="w-[180px]">
+                    <SelectValue placeholder="Type of resturant" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectGroup>
+                      <SelectItem value="apple">1</SelectItem>
+                      <SelectItem value="banana">2</SelectItem>
+                      <SelectItem value="blueberry">3</SelectItem>
+                    </SelectGroup>
+                  </SelectContent>
+                </Select>
+              </div>
               <div>
-                <p className=" flex max-w-sm">
-                  123 Main St
-                  <br />
-                  Philadelphia, PA 19144
-                  <br />
-                  Center City
-                </p>
+                <ul>
+                  <li>Bars</li>
+                  <li>Lounge</li>
+                </ul>
               </div>
             </div>
+            <div className=" flex flex-col gap-4">
+              <div className=" flex justify-between items-center text-lg font-semibold">
+                Amenities
+                <Button className="rounded-none" variant={"outline"}>
+                  Edit
+                </Button>
+              </div>
 
+              <ul>
+                <li>Wifi</li>
+                <li>Lounge</li>
+                <li>Full Bar</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className=" flex flex-col gap-4 w-full max-w-sm">
+            <div className="flex justify-between items-center  text-lg font-semibold">
+              Address
+              <Button className="rounded-none" variant={"outline"}>
+                Edit
+              </Button>
+            </div>
             <div>
-              <div className="flex justify-between w-full max-w-sm items-center text-lg font-semibold">
+              <p>
+                123 Main St
+                <br />
+                Philadelphia, PA 19144
+                <br />
+                Center City
+              </p>
+            </div>
+            <div>
+              <div className="flex justify-between items-center text-lg font-semibold">
                 Hours
                 <Button className="rounded-none" variant={"outline"}>
                   Edit
                 </Button>
               </div>
 
-              <Table className="">
+              <Table>
                 <TableBody className=" flex flex-col max-w-xs justify-between">
                   <TableRow className="flex justify-between">
                     <TableCell className="font-medium">Sun</TableCell>
@@ -202,7 +251,9 @@ export default function Subscription() {
             </div>
           </div>
         </div>
+
+        
       </div>
-  
+    </div>
   );
 }

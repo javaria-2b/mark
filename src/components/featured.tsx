@@ -11,7 +11,7 @@ const imageData = [
 
 const Featured = () => {
   return (
-    <div className="flex items-center space-x-4">
+    <div className="flex flex-col gap-4 md:flex-row items-center space-x-4">
       {imageData.map((image, index) => (
         <div key={index} className=" flex justify-start items-center">
           <img src={image.src} alt={image.alt} className="h-48 w-48" />
